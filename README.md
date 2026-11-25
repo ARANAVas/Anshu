@@ -1,52 +1,49 @@
-# Anshu Kumari — Cinematic Portfolio
+# Anshu Kumari — Cinematic Personal Portfolio
 
-A responsive, video-led personal portfolio with a midnight-black visual system, coral/champagne accents, editorial typography, AA monogram branding, two professional portraits, and two short cinematic video loops.
+A responsive, single-page portfolio using the supplied cinematic video references, two professional portrait photographs, the AA monogram and Anshu's resume.
 
-## Contents
-
-- `index.html` — semantic portfolio structure and content
-- `styles.css` — responsive design system, component styling, and motion
-- `app.js` — mobile navigation, scroll interactions, media playback, and message form
-- `assets/` — original portfolio media, AA mark, favicon, and privacy-redacted resume
-
-## Run locally
-
-This is a static website. For a reliable preview, serve the folder over HTTP rather than opening `index.html` directly:
-
-```bash
-python -m http.server 8000
-```
-
-Then open `http://localhost:8000` in a browser.
-
-## Deploy to Vercel
-
-1. Upload the contents of this folder to a GitHub repository.
-2. Import the repository into Vercel.
-3. Choose **Other** as the framework preset.
-4. Leave the build command empty.
-5. Set the output directory to `.`.
-6. Deploy.
-
-The project uses relative local asset paths, so keep the `assets` folder alongside `index.html`.
+## What's included
+- Cinematic Hero and About video sections with poster fallbacks.
+- Two professional portrait photographs.
+- A motivational About story based on Anshu's education, internship, SBI Assistant Manager preparation, student guidance/teaching activity and long-term business ambition.
+- Skills, internship highlights and a career/education timeline.
+- A visitor message section with name, email, subject and message fields.
+- A downloadable resume PDF with the personal phone number truly redacted.
+- AA monogram branding and the requested footer: **© 2026 Anshnav. All rights reserved.**
 
 ## Message form behaviour
+The message form validates required fields and prepares a message addressed to Anshu's published email address. It opens the visitor's configured email application with the visitor's name, email, subject and message prefilled. The visitor reviews the draft and presses Send in their email application.
 
-The visitor form validates the name, email, subject and message, then prepares an email draft addressed to `ak99552534@gmail.com` through the visitor's configured email app. The visitor must review and press **Send** in that app. This static site does not store, transmit, or retain message submissions. For direct on-site delivery, connect a trusted form backend or form service and update the form handler accordingly.
+This is a static website, so it does **not** send messages directly to a server and does **not** collect or store form submissions. Direct in-page delivery would require a server/API endpoint or a configured form service.
 
-## Privacy
+## Phone privacy
+The personal phone number has been removed from the website markup and links. It has also been removed from the downloadable resume using PDF redaction; the redacted PDF was rendered and its extracted text checked.
 
-The personal phone number has been removed from the site and the downloadable resume. The public email address remains available for enquiries.
+## Run locally
+For reliable video and asset loading, run a local server from this folder:
+
+```bash
+python -m http.server 8080
+```
+
+Then open `http://localhost:8080` in a modern browser.
+
+## Deploy to Vercel
+1. Upload the contents of this folder to a GitHub repository.
+2. Import that repository into Vercel.
+3. Choose **Other** as the framework preset.
+4. Leave the build command empty.
+5. Set the output directory to `.` and deploy.
 
 ## Accessibility and performance
+- Responsive layouts for narrow Android phones, tablets and desktop screens.
+- Lazy loading for the About video and portrait images.
+- Videos pause outside the viewport and while the browser tab is hidden.
+- Reduced-motion preferences use still poster images instead of video motion.
+- Data Saver preference suppresses video playback.
+- Keyboard-accessible navigation, skip link, visible focus styles and Escape-to-close mobile menu.
+- Message form uses native input semantics, required-field validation and a live status message.
+- No framework build step or third-party JavaScript library is required. Google Fonts enhance typography when online; system fallbacks remain available.
 
-- Responsive layouts for narrow phones through wide desktop screens
-- Keyboard-accessible navigation and visible focus styling
-- `prefers-reduced-motion` support
-- Data Saver preference respected where the browser exposes it
-- Video loading deferred until the relevant section is near the viewport
-- Videos pause when outside the viewport or when the document is hidden
-- Local WebP posters remain as visual fallbacks when video playback is unavailable
-- No build step or JavaScript framework required
-
-The external Google Fonts stylesheet is an enhancement; system font fallbacks are included for offline or blocked-font scenarios.
+## Content accuracy
+Education, internship details, dates, verified skills and email contact are based on the supplied resume. SBI Assistant Manager preparation and becoming a businesswoman are stated as career goals. Student guidance and teaching are stated as a current activity, without inventing an employer, formal teaching role, student count or dates.
